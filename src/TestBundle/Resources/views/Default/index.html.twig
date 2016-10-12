@@ -1,0 +1,14 @@
+<h1>News</h1>
+<table>
+	{% for new in news %}
+		<tr><td>{{new.title}}</td>
+		<td>{{new.message}}</td>
+		<td>{{new.author.firstname}}</td>
+		<td><a href="{{ path('update-news', {'id':new.id}) }}">Update</a></td>
+		<td><a href="{{ path('news_delete', {'id':new.id}) }}">Delete</a></td></tr>
+	{% else %}
+		No news
+	{% endfor %}
+</table>
+<hr/>
+ {{form(form)}}
